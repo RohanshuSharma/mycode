@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		ED65411E213AF363006B8924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65411D213AF363006B8924 /* AppDelegate.swift */; };
-		ED654120213AF363006B8924 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65411F213AF363006B8924 /* ViewController.swift */; };
 		ED654123213AF363006B8924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED654121213AF363006B8924 /* Main.storyboard */; };
 		ED654125213AF364006B8924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED654124213AF364006B8924 /* Assets.xcassets */; };
 		ED654128213AF364006B8924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED654126213AF364006B8924 /* LaunchScreen.storyboard */; };
+		ED654130213AF3E2006B8924 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65412F213AF3E2006B8924 /* MapScreen.swift */; };
+		ED654133213AFA65006B8924 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED654132213AFA65006B8924 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED65411A213AF363006B8924 /* MapKit-Directions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MapKit-Directions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED65411D213AF363006B8924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED65411F213AF363006B8924 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED654122213AF363006B8924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED654124213AF364006B8924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED654127213AF364006B8924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED654129213AF364006B8924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED65412F213AF3E2006B8924 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		ED654132213AFA65006B8924 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED654133213AFA65006B8924 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				ED65411C213AF363006B8924 /* MapKit-Directions */,
 				ED65411B213AF363006B8924 /* Products */,
+				ED654131213AFA65006B8924 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +59,21 @@
 			isa = PBXGroup;
 			children = (
 				ED65411D213AF363006B8924 /* AppDelegate.swift */,
-				ED65411F213AF363006B8924 /* ViewController.swift */,
+				ED65412F213AF3E2006B8924 /* MapScreen.swift */,
 				ED654121213AF363006B8924 /* Main.storyboard */,
 				ED654124213AF364006B8924 /* Assets.xcassets */,
 				ED654126213AF364006B8924 /* LaunchScreen.storyboard */,
 				ED654129213AF364006B8924 /* Info.plist */,
 			);
 			path = "MapKit-Directions";
+			sourceTree = "<group>";
+		};
+		ED654131213AFA65006B8924 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED654132213AFA65006B8924 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +108,12 @@
 				TargetAttributes = {
 					ED654119213AF363006B8924 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED654120213AF363006B8924 /* ViewController.swift in Sources */,
+				ED654130213AF3E2006B8924 /* MapScreen.swift in Sources */,
 				ED65411E213AF363006B8924 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,15 +301,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H69U55MWXW;
+				DEVELOPMENT_TEAM = 3345GZV654;
 				INFOPLIST_FILE = "MapKit-Directions/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.seanallen.MapKit-Directions";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohanshusharma.MapKit-Directions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -301,15 +319,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H69U55MWXW;
+				DEVELOPMENT_TEAM = 3345GZV654;
 				INFOPLIST_FILE = "MapKit-Directions/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.seanallen.MapKit-Directions";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohanshusharma.MapKit-Directions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
